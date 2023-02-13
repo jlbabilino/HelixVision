@@ -25,7 +25,10 @@ while True:
         break
 
     # Detect 16h5 markers and draw bouding boxes/ids
-    corners, ids, _ = cv.aruco.detectMarkers(img, cv.aruco.Dictionary_get(cv.aruco.DICT_APRILTAG_16h5))
+    dictionary = cv.aruco.getPredefinedDictionary(cv.aruco.DICT_APRILTAG_16h5)
+    parameters =  cv.aruco.DetectorParameters()
+    detector = cv.aruco.ArucoDetector(dictionary, parameters)
+    corners, ids, _ = detector.detectMarkers(img)
     cv.aruco.drawDetectedMarkers(img, corners, ids)
 
     # Display the resulting frame
