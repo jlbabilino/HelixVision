@@ -20,6 +20,6 @@ pip install -r requirements.txt
 
 Run example:
 
-```
+```console
 python src/main.py
 ```
