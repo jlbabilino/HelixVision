@@ -1,6 +1,8 @@
 import cv2 as cv
 import time
 
+print(cv.getBuildInformation())
+
 fps_start_time = 0
 
 cap = cv.VideoCapture(0)
